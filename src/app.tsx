@@ -1,12 +1,16 @@
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, Text, View } from 'react-native';
-import tw from 'tailwind-react-native-classnames';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <View style={tw`p-1`}>
-        <Text>123</Text>
-      </View>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <StatusBar animated style="auto" />
+      <SafeAreaView>
+        <View>
+          <Text>123</Text>
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
